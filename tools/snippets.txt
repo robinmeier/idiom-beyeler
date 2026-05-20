@@ -1,0 +1,998 @@
+
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/essais avril 2026/fm-stabs'
+TARGET='input/vimala-dunes.wav'
+OUT='output/palette0515'
+
+for N in 1 2 3 4; do
+  for T in 2.5 3.5 6.; do
+    for R in 1 2 3 4; do
+      uv run clone_voice.py \
+        "${STABS}/fm-stab-${N}.wav" \
+        "$TARGET" \
+        --repetition-penalty 0.6 \
+        --temperature $T \
+        -o "${OUT}/fm-stab-${N}-t${T}-rp0.6-${R}.wav"
+    done
+  done
+done
+
+
+for N in 1; do
+  for T in 2.5; do
+    for R in 1 2 3 4 5 6 7 8 9; do
+      uv run clone_voice.py \
+        "${STABS}/fm-stab-${N}.wav" \
+        "$TARGET" \
+        --repetition-penalty 1.0 \
+        --temperature $T \
+        -o "${OUT}/fm-stab-${N}-t${T}-rp1.0-${R}.wav"
+    done
+  done
+done
+
+
+for T in 2.5; do
+  for R in 1 2 3 4 5 6 7 8 9; do
+    uv run clone_voice.py \
+      "/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/fm-drone-short.wav" \
+      "$TARGET" \
+      --repetition-penalty 1.0 \
+      --temperature $T \
+      -o "${OUT}/fm-drone-short-t${T}-rp1.0-${R}.wav"
+  done
+done
+
+for T in 6.5 7.5 8.5; do
+  for R in 1 2 3 4 5; do
+    uv run clone_voice.py \
+      "/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/fm-drone-short.wav" \
+      "$TARGET" \
+      --repetition-penalty 1.0 \
+      --temperature $T \
+      -o "${OUT}/fm-drone-short-t${T}-rp1.0-${R}.wav"
+  done
+done
+
+
+for T in 2.5 3.5 6.5; do
+  for R in 1 2 3 4 5; do
+    uv run clone_voice.py \
+      "/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/essais mai/scrubo-1.wav" \
+      "$TARGET" \
+      --repetition-penalty 1.0 \
+      --temperature $T \
+      -o "${OUT}/scrubo-1-t${T}-rp1.0-${R}.wav"
+  done
+done
+
+
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/essais mai/'
+
+
+for N in 2 3 4 5 6; do
+  for T in 2.5 3.5 6.; do
+    for R in 1 2 3 4 5; do
+      uv run clone_voice.py \
+        "${STABS}/scrubo-${N}.wav" \
+        "$TARGET" \
+        --repetition-penalty 0.9 \
+        --temperature $T \
+        -o "${OUT}/scrubo-${N}-t${T}-rp0.9-${R}.wav"
+    done
+  done
+done
+
+
+for N in 1 4 6; do
+  for T in 3.5 6.; do
+    for R in 1 2 3 4 5; do
+      for P in 0.2 0.4 0.9; do
+        uv run clone_voice.py \
+          "${STABS}/scrubo-${N}.wav" \
+          "$TARGET" \
+          --repetition-penalty 0.9 \
+          --temperature $T \
+          --top-p $P \
+          -o "${OUT}/scrubo-${N}-t${T}-p${P}-rp0.9-${R}.wav"
+      done
+    done
+  done
+done
+
+
+OUT='output/palette0515-batch2'
+
+for N in 1 2 3 5 7 8 9 10; do
+  for T in 3.5 4.5; do
+    for R in 1 2 3 4; do
+      for P in 0.5 0.4 0.3 0.6; do
+        uv run clone_voice.py \
+          "${STABS}/scrubo-${N}.wav" \
+          "$TARGET" \
+          --repetition-penalty 0.9 \
+          --temperature $T \
+          --top-p $P \
+          -o "${OUT}/scrubo-${N}-t${T}-p${P}-rp0.9-${R}.wav"
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0515-asia'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/asia-seeds'
+
+for N in 1 2 3 4 5 6 7 8 9 10; do
+  for T in 3.5 4.5; do
+    for R in 1 2 3 4; do
+      for P in 0.5 0.4 0.3 0.6; do
+        uv run clone_voice.py \
+          "${STABS}/asia-${N}.wav" \
+          "$TARGET" \
+          --repetition-penalty 0.9 \
+          --temperature $T \
+          --top-p $P \
+          -o "${OUT}/asia-${N}-t${T}-p${P}-rp0.9-${R}.wav"
+      done
+    done
+  done
+done
+
+
+
+
+OUT='output/palette0515-opfm'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/opfm-seeds'
+
+for N in 1 2 3 4 5; do
+  for T in 3.5 4.5; do
+    for R in 1 2 3 4; do
+      for P in 0.5 0.7 0.9; do
+        uv run clone_voice.py \
+          "${STABS}/opfm-${N}.wav" \
+          "$TARGET" \
+          --repetition-penalty 0.9 \
+          --temperature $T \
+          --top-p $P \
+          -o "${OUT}/opfm-${N}-t${T}-p${P}-rp0.9-${R}.wav"
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 1 2 3 4 5 6 7 8; do
+  for T in 3.5 4.5; do
+    for R in 1 2 3 4; do
+      for P in 0.5 0.7; do
+        uv run clone_voice.py \
+          "${STABS}/sktrt-${N}.wav" \
+          "$TARGET" \
+          --repetition-penalty 0.9 \
+          --temperature $T \
+          --top-p $P \
+          -o "${OUT}/sktrt-${N}-t${T}-p${P}-rp0.9-${R}.wav"
+      done
+    done
+  done
+done
+
+
+for N in 9 10; do
+  for T in 3.5 6.5; do
+    for R in 1 2 3 4; do
+      for P in 0.3 0.5 0.7; do
+        uv run clone_voice.py \
+          "${STABS}/sktrt-${N}.wav" \
+          "$TARGET" \
+          --repetition-penalty 0.9 \
+          --temperature $T \
+          --top-p $P \
+          -o "${OUT}/sktrt-${N}-t${T}-p${P}-rp0.9-${R}.wav"
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 9; do
+  for T in 3.5; do
+    for R in 1 2 3 4; do
+      for P in 0.3 0.5; do
+        for VOL_LABEL in "norm:0" "norm-6:-6" "norm-12:-12"; do
+          LABEL="${VOL_LABEL%%:*}"
+          DB="${VOL_LABEL##*:}"
+
+          # Create a temp normalised (+ optional gain) version of the input
+          TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+          ffmpeg -y -i "${STABS}/sktrt-${N}.wav" \
+            -af "loudnorm,volume=${DB}dB" \
+            "$TMPFILE" -loglevel quiet
+
+          uv run clone_voice.py \
+            "$TMPFILE" \
+            "$TARGET" \
+            --repetition-penalty 0.9 \
+            --temperature $T \
+            --top-p $P \
+            -o "${OUT}/sktrt-${N}-t${T}-p${P}-rp0.9-${R}-${LABEL}.wav"
+
+          rm "$TMPFILE"
+        done
+      done
+    done
+  done
+done
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 9; do
+  for T in 3.5; do
+    for R in 1 2 3 4; do
+      for P in 0.5 0.3; do
+        for OFFSET in 0 -6 -12; do
+
+          if [ "$OFFSET" -eq 0 ]; then
+            LABEL="norm"
+          else
+            LABEL="norm${OFFSET}"
+          fi
+
+          TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+          # --norm peak-normalises to 0dBFS, then gain applies the offset
+          sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+
+          uv run clone_voice.py \
+            "$TMPFILE" \
+            "$TARGET" \
+            --repetition-penalty 0.9 \
+            --temperature $T \
+            --top-p $P \
+            -o "${OUT}/sktrt-${N}-t${T}-p${P}-rp0.9-${R}-${LABEL}.wav"
+
+          rm "$TMPFILE"
+        done
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 6 10; do
+  for T in 3.5 4.5; do
+    for R in 1 2 3 4; do
+      for P in 0.5 0.6; do
+        for OFFSET in 0 -6 -12; do
+
+          if [ "$OFFSET" -eq 0 ]; then
+            LABEL="norm"
+          else
+            LABEL="norm${OFFSET}"
+          fi
+
+          TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+          # --norm peak-normalises to 0dBFS, then gain applies the offset
+          sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+
+          uv run clone_voice.py \
+            "$TMPFILE" \
+            "$TARGET" \
+            --repetition-penalty 0.9 \
+            --temperature $T \
+            --top-p $P \
+            -o "${OUT}/sktrt-${N}-t${T}-p${P}-rp0.9-${R}-${LABEL}.wav"
+
+          rm "$TMPFILE"
+        done
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 11 12 13 14 15 16 17; do
+  for T in 3.5 5.5; do
+    for R in 1 2 3 4; do
+      for P in 0.5 0.6; do
+        for OFFSET in 0 -6 -12; do
+
+          if [ "$OFFSET" -eq 0 ]; then
+            LABEL="norm"
+          else
+            LABEL="norm${OFFSET}"
+          fi
+
+          TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+          # --norm peak-normalises to 0dBFS, then gain applies the offset
+          sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+
+          uv run clone_voice.py \
+            "$TMPFILE" \
+            "$TARGET" \
+            --repetition-penalty 0.9 \
+            --temperature $T \
+            --top-p $P \
+            -o "${OUT}/sktrt-${N}-t${T}-p${P}-rp0.9-${R}-${LABEL}.wav"
+
+          rm "$TMPFILE"
+        done
+      done
+    done
+  done
+done
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 14 6; do
+  for DIR in fwd rev; do
+    for T in 3.5; do
+      for R in 5 6 7 8; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 0.9 \
+              --temperature $T \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp0.9-${R}-${LABEL}.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 1 2 4 6 10 15 16 17; do
+  for DIR in fwd rev; do
+    for T in 3.5 1.5; do
+      for R in 9 10 11 12; do
+        for P in 0.5 0.4; do
+          for OFFSET in -6 -9; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 0.9 \
+              --temperature $T \
+              --length-adjust 2.0 \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp0.9-${R}-${LABEL}-la2.0.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+for N in 11; do
+  for DIR in fwd rev; do
+    for T in 3.5 1.5; do
+      for R in 9 10; do
+        for P in 0.5 0.4; do
+          for OFFSET in -6 -9; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 0.9 \
+              --temperature $T \
+              --length-adjust 2.0 \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp0.9-${R}-${LABEL}-la2.0.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+for N in 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34; do
+  for DIR in fwd rev; do
+    for T in 3.5 1.5; do
+      for R in 1 2; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 0.9 \
+              --temperature $T \
+              --length-adjust 2.0 \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp0.9-${R}-${LABEL}-la2.0.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+
+for N in 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56; do
+  for DIR in fwd rev; do
+    for T in 2.5 1.5; do
+      for R in 1 2; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 0.9 \
+              --temperature $T \
+              --length-adjust 2.0 \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp0.9-${R}-${LABEL}-la2.0.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+for N in 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136; do
+  for DIR in fwd rev; do
+    for T in 2.5 1.5; do
+      for R in 1; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 0.9 \
+              --temperature $T \
+              --length-adjust 2.0 \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp0.9-${R}-${LABEL}-la2.0.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+for N in 133; do
+  for DIR in fwd rev; do
+    for T in 2.5 1.5; do
+      for R in 1; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 2.0 \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la2.0.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+OUT='output/palette0518-scrubo'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/scrubo-seeds'
+
+for N in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16; do
+  for DIR in fwd rev; do
+    for T in 2.5 1.5; do
+      for R in 1 2; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/scrubo-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/scrubo-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/scrubo-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 0.9 \
+              --temperature $T \
+              --length-adjust 1.7 \
+              --top-p $P \
+              -o "${OUT}/scrubo-${N}-${DIR}-t${T}-p${P}-rp0.9-${R}-${LABEL}-la1.7.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+OUT='output/palette0518-scrubo'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/scrubo-seeds'
+
+for N in 20 21 22 23 24 25 26 27 28 29 30 31 32 33; do
+  for DIR in fwd rev; do
+    for T in 2.5 1.5; do
+      for R in 1 2; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/scrubo-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/scrubo-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/scrubo-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1.7 \
+              --top-p $P \
+              -o "${OUT}/scrubo-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.7.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222; do
+  for DIR in fwd rev; do
+    for T in 2.5 1.5; do
+      for R in 1 2; do
+        for P in 0.5; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1.7 \
+              --top-p $P \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.7.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0519-stutter'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/stutter-seeds'
+
+for N in 1 2 3 4 5; do
+  for DIR in fwd ; do
+    for T in 1.5; do
+      for R in 1; do
+        for P in 0.7; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/stutter-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/stutter-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/stutter-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1. \
+              --top-p $P \
+              --no-style \
+              -o "${OUT}/stutter-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.nostyle.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0516-sktrt'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-seeds'
+
+for N in 900; do
+  for DIR in fwd rev; do
+    for T in 2.5; do
+      for R in 1; do
+        for P in 0.9; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1.7 \
+              --top-p $P \
+              --no-style \
+              -o "${OUT}/sktrt-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.7-nostyle.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+
+OUT='output/palette0519-sktrt-interrupted'
+STABS='/Users/robin/Library/CloudStorage/Dropbox/huyghe idiom beyeler/sktrt-interrupted'
+
+for N in 10 11 12 13 14 15; do
+  for DIR in fwd rev; do
+    for T in 1.5; do
+      for R in 1 2; do
+        for P in 0.8; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-intrr-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1.7 \
+              --top-p $P \
+              -o "${OUT}/sktrt-intrr-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.7.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+for N in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15; do
+  for DIR in fwd rev; do
+    for T in 1.5 2.5; do
+      for R in 4; do
+        for P in 0.75; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-intrr-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1.7 \
+              --top-p $P \
+              -o "${OUT}/sktrt-intrr-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.7.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+for N in 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37; do
+  for DIR in fwd rev; do
+    for T in 1.5 2.5; do
+      for R in 1 2; do
+        for P in 0.75 0.8; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-intrr-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1.7 \
+              --top-p $P \
+              -o "${OUT}/sktrt-intrr-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.7.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
+
+
+
+for N in 11 12 13 14 15; do
+  for DIR in fwd rev; do
+    for T in 1.5 2.5; do
+      for R in 5 6 7; do
+        for P in 0.75; do
+          for OFFSET in -6; do
+
+            if [ "$OFFSET" -eq 0 ]; then
+              LABEL="norm"
+            else
+              LABEL="norm${OFFSET}"
+            fi
+
+            TMPFILE=$(mktemp /tmp/sktrt-intrr-input-XXXXXX.wav)
+
+            if [ "$DIR" = "rev" ]; then
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET reverse
+            else
+              sox "${STABS}/sktrt-intrr-${N}.wav" "$TMPFILE" norm gain $OFFSET
+            fi
+
+            uv run clone_voice.py \
+              "$TMPFILE" \
+              "$TARGET" \
+              --repetition-penalty 1.2 \
+              --temperature $T \
+              --length-adjust 1.9 \
+              --top-p $P \
+              -o "${OUT}/sktrt-intrr-${N}-${DIR}-t${T}-p${P}-rp1.2-${R}-${LABEL}-la1.9.wav"
+
+            rm "$TMPFILE"
+          done
+        done
+      done
+    done
+  done
+done
