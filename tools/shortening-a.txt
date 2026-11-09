@@ -1,0 +1,98 @@
+find . -name sktrt-intrr-35-fwd-t1.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-21-fwd-t1.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-20-fwd-t2.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-27-rev-t1.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t1.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-fwd-t1.5-p0.75-rp1.2-6-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t2.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-36-fwd-t2.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t1.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-27-rev-t1.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-36-rev-t1.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-14-rev-t2.5-p0.85-rp1.2-3-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t1.5-p0.75-rp1.2-5-norm-9-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-36-fwd-t2.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-20-rev-t1.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t1.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-46-rev-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-21-fwd-t1.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-46-rev-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t1.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t1.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t2.5-p0.75-rp1.2-6-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-20-rev-t2.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-14-rev-t2.5-p0.85-rp1.2-3-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-fwd-t2.5-p0.75-rp1.2-5-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-15-fwd-t2.5-p0.75-rp1.2-7-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-122-rev-t2.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-33-rev-t1.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-36-rev-t2.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-36-rev-t1.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-35-fwd-t1.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-53-rev-t1.5-p0.5-rp0.9-2-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-35-fwd-t1.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-20-fwd-t2.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-32-rev-t1.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-40-rev-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-32-rev-t1.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-31-fwd-t2.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-20-fwd-t1.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-4-rev-t2.5-p0.85-rp1.2-3-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-33-fwd-t2.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-33-fwd-t2.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-33-rev-t2.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-20-rev-t2.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-43-fwd-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t1.5-p0.75-rp1.2-4-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-20-fwd-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t2.5-p0.75-rp1.2-5-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t2.5-p0.75-rp1.2-6-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-33-rev-t3.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t1.5-p0.75-rp1.2-7-norm-9-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-54-fwd-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t1.5-p0.75-rp1.2-7-norm-9-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t2.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-11-rev-t2.5-p0.75-rp1.2-5-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-24-fwd-t1.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-46-fwd-t1.5-p0.5-rp0.9-2-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-31-fwd-t2.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-33-rev-t2.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-101-rev-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-28-fwd-t2.5-p0.75-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-13-rev-t1.5-p0.8-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-13-fwd-t1.5-p0.75-rp1.2-6-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-33-fwd-t1.5-p0.8-rp1.2-2-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-54-rev-t2.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+find . -name sktrt-intrr-12-rev-t1.5-p0.75-rp1.2-7-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-12-rev-t1.5-p0.75-rp1.2-7-norm-9-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-27-fwd-t2.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-intrr-12-rev-t1.5-p0.75-rp1.2-5-norm-6-la1.9-eqcomp.mp3 -delete
+find . -name sktrt-intrr-30-rev-t2.5-p0.75-rp1.2-1-norm-6-la1.7-eqcomp.mp3 -delete
+find . -name sktrt-40-rev-t1.5-p0.5-rp0.9-1-norm-6-la2.0-eqcomp.mp3 -delete
+
+
+rm -r word-174
+rm -r word-173
+rm -r word-39
+rm -r word-204
+rm -r word-203
+rm -r word-221
+rm -r word-25
+rm -r word-24
+rm -r word-133
+rm -r word-134
+rm -r word-4
+rm -r word-193
+rm -r word-300
+rm -r word-311
+rm -r word-124
+rm -r word-170
+rm -r word-206
+rm -r word-21
+rm -r word-213
+rm -r word-17
+rm -r word-199
+rm -r word-334
+rm -r word-137
+rm -r word-305
+rm -r word-136
