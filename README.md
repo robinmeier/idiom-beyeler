@@ -22,68 +22,6 @@ noises, synth stabs…) and re-renders it with the timbre and style of a
 | `tools/shortening.txt` | Archive of the files removed in the first duration pass           |
 | `tools/shortening2.txt`| Archive of the files and word folders removed in later passes     |
 
-## Workflow
-
-These are the steps that turned a small set of hand-made sounds into the
-vocabulary of "words" played by the speakers built into the idiom masks.
-
-### 1. Generate a raw vocabulary
-
-`clone_voice.py` is run on hand-crafted **seeds**: short source sounds made
-for the project (families named `sktrt`, `sktrt-intrr`, `scrubo`, `fm-stab`,
-`opfm`, `asia`, `stutter`…), all cloned onto the same target voice.
-
-Each seed is cloned many times with different settings. The loops vary:
-
-- temperature and top-p, often well beyond the usual speech range
-- repetition penalty and length adjust (stretching the output to 1.7–2.0×)
-- input level (peak-normalised, then lowered by 0, −6, −9 or −12 dB)
-- direction (each seed played forwards and reversed)
-- repeat number: the same settings are run several times, since results
-  vary from run to run
-
-Because each combination gives a different sound, a limited number of seeds
-yields a large and varied pool. The parameters are written into each output
-filename, so every sound can be traced back to its seed and settings. For
-example, `sktrt-14-rev-t3.5-p0.5-rp0.9-5-norm-6-la2.0.wav` is seed `sktrt-14`,
-reversed, temperature 3.5, top-p 0.5, repetition penalty 0.9, run 5,
-normalised then −6 dB, length adjust 2.0.
-
-Every generation command used is kept in
-[`tools/snippets.txt`](tools/snippets.txt).
-
-### 2. Master for the mask speakers
-
-The resulting sounds go through [`tools/eqcomp.sh`](#toolseqcompsh). It
-shapes them for playback on the small speakers embedded in the masks with an
-EQ preset for small speakers and a soft compressor, adds short fades to avoid
-clicks, and encodes them to MP3. The result is named `<name>-eqcomp.mp3`.
-
-### 3. Group into words
-
-[`tools/group_mp3s.sh`](#toolsgroup_mp3ssh) moves the mastered MP3s into
-numbered `word-N/` folders of three files each. The Raspberry Pis in the masks
-use this folder structure. The start number lets a new batch continue the
-numbering after an existing one instead of overwriting it.
-
-### 4. Trim words that are too long
-
-Some generated sounds turned out too long. To fix this:
-
-1. The file durations were analysed statistically, and the longest files
-   were deleted. This was done twice.
-2. Some words were still too long after that, so their whole `word-N/` folder
-   was removed.
-
-The deleted files and folders are archived as the shell commands that removed
-them, so the vocabulary can be reconstructed or audited later:
-
-- [`tools/shortening.txt`](tools/shortening.txt): the first duration pass,
-  62 files.
-- [`tools/shortening2.txt`](tools/shortening2.txt): the second duration pass,
-  95 distinct files (some appear more than once), followed by the 45 `word-N/`
-  folders removed entirely.
-
 ## Requirements
 
 - [uv](https://docs.astral.sh/uv/getting-started/installation/)
@@ -186,6 +124,68 @@ uv run clone_voice.py speech.wav voice.wav --diffusion-steps 50
 - **Deliberately unstable or abstract results:** for non-speech sources (synth
   stabs, drones, scrubbed material), `tools/snippets.txt` pushes `--temperature`
   well beyond the usual range (1.5–8.5) and uses `--length-adjust` 1.7–2.0.
+
+## Workflow
+
+These are the steps that turned a small set of hand-made sounds into the
+vocabulary of "words" played by the speakers built into the idiom masks.
+
+### 1. Generate a raw vocabulary
+
+`clone_voice.py` is run on hand-crafted **seeds**: short source sounds made
+for the project (families named `sktrt`, `sktrt-intrr`, `scrubo`, `fm-stab`,
+`opfm`, `asia`, `stutter`…), all cloned onto the same target voice.
+
+Each seed is cloned many times with different settings. The loops vary:
+
+- temperature and top-p, often well beyond the usual speech range
+- repetition penalty and length adjust (stretching the output to 1.7–2.0×)
+- input level (peak-normalised, then lowered by 0, −6, −9 or −12 dB)
+- direction (each seed played forwards and reversed)
+- repeat number: the same settings are run several times, since results
+  vary from run to run
+
+Because each combination gives a different sound, a limited number of seeds
+yields a large and varied pool. The parameters are written into each output
+filename, so every sound can be traced back to its seed and settings. For
+example, `sktrt-14-rev-t3.5-p0.5-rp0.9-5-norm-6-la2.0.wav` is seed `sktrt-14`,
+reversed, temperature 3.5, top-p 0.5, repetition penalty 0.9, run 5,
+normalised then −6 dB, length adjust 2.0.
+
+Every generation command used is kept in
+[`tools/snippets.txt`](tools/snippets.txt).
+
+### 2. Master for the mask speakers
+
+The resulting sounds go through [`tools/eqcomp.sh`](#toolseqcompsh). It
+shapes them for playback on the small speakers embedded in the masks with an
+EQ preset for small speakers and a soft compressor, adds short fades to avoid
+clicks, and encodes them to MP3. The result is named `<name>-eqcomp.mp3`.
+
+### 3. Group into words
+
+[`tools/group_mp3s.sh`](#toolsgroup_mp3ssh) moves the mastered MP3s into
+numbered `word-N/` folders of three files each. The Raspberry Pis in the masks
+use this folder structure. The start number lets a new batch continue the
+numbering after an existing one instead of overwriting it.
+
+### 4. Trim words that are too long
+
+Some generated sounds turned out too long. To fix this:
+
+1. The file durations were analysed statistically, and the longest files
+   were deleted. This was done twice.
+2. Some words were still too long after that, so their whole `word-N/` folder
+   was removed.
+
+The deleted files and folders are archived as the shell commands that removed
+them, so the vocabulary can be reconstructed or audited later:
+
+- [`tools/shortening.txt`](tools/shortening.txt): the first duration pass,
+  62 files.
+- [`tools/shortening2.txt`](tools/shortening2.txt): the second duration pass,
+  95 distinct files (some appear more than once), followed by the 45 `word-N/`
+  folders removed entirely.
 
 ## Tools
 
