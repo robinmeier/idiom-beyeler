@@ -19,8 +19,7 @@ noises, synth stabs…) and re-renders it with the timbre and style of a
 | `tools/vstapply.py`    | Apply any VST3/AU plugin (and optional preset) to an audio file   |
 | `tools/group_mp3s.sh`  | Sort MP3s into numbered folders of three (`word-N/`)              |
 | `tools/snippets.txt`   | Batch-generation loops used to build the sound palettes           |
-| `tools/shortening.txt` | Archive of the files removed in the first duration pass           |
-| `tools/shortening2.txt`| Archive of the files and word folders removed in later passes     |
+| `tools/shortening/`    | Archive of the files and word folders removed                     |
 
 ## Requirements
 
