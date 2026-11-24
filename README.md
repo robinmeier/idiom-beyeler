@@ -257,3 +257,4 @@ Moves the MP3s in a folder, in sorted order, into subfolders of three named
 
 Voice conversion by [Seed-VC](https://github.com/Plachtaa/seed-vc) (Plachtaa).
 See that repository for the model licence and terms of use.
+Created for Pierre Huyghe's Idiom by Robin Meier Wiratunga, 2026
